@@ -1,5 +1,9 @@
-const port = process.env.PORT || 3000;
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const Message = require('./models/Message');
 
-app.listen(port, () => {
-  console.log(`🚀 Server running on port ${port}`);
-});
+const app = express();
+
+app.use(bodyParser.json());
